@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bgdark: '#090A14',
+              primary: '#DF6B33',
+              surface: '#11131f',
+              border: '#202238',
+              text: '#f5f7ff',
+              muted: '#adb0c9'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root { color-scheme: dark; }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #090A14;
+        color: #f5f7ff;
+      }
+      .font-heading {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-bgdark text-white">
+    <div class="flex min-h-screen items-center justify-center px-4 py-10">
+      <div class="w-full max-w-6xl overflow-hidden rounded-[2rem] border border-[#171A2B] bg-[#0d0f1c]/90 shadow-[0_30px_80px_rgba(0,0,0,0.55)] backdrop-blur-xl sm:mx-4">
+        <div class="grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
+          <div class="relative flex flex-col justify-center px-8 py-10 sm:px-10">
+            <div class="mb-8">
+              <p class="text-sm uppercase tracking-[0.3em] text-[#DF6B33]/80">Create your account</p>
+              <h1 class="mt-3 text-4xl font-heading font-extrabold leading-tight tracking-tight text-white sm:text-5xl">Register for a new account</h1>
+              <p class="mt-4 max-w-[28rem] text-sm leading-6 text-[#d1d4e2]">Join now to access your dashboard, secure settings, and personalized workspace.</p>
+            </div>
+            <form id="registerForm" class="space-y-5" novalidate>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-[#d1d4e2]" for="fullName">Full name</label>
+                <input id="fullName" name="fullName" type="text" required placeholder="John Doe" class="w-full rounded-2xl border border-[#1f233d] bg-[#101325] px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30" />
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-[#d1d4e2]" for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="you@example.com" class="w-full rounded-2xl border border-[#1f233d] bg-[#101325] px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30" />
+              </div>
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label class="mb-2 block text-sm font-medium text-[#d1d4e2]" for="password">Password</label>
+                  <input id="password" name="password" type="password" required placeholder="••••••••" class="w-full rounded-2xl border border-[#1f233d] bg-[#101325] px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30" />
+                </div>
+                <div>
+                  <label class="mb-2 block text-sm font-medium text-[#d1d4e2]" for="confirmPassword">Confirm password</label>
+                  <input id="confirmPassword" name="confirmPassword" type="password" required placeholder="••••••••" class="w-full rounded-2xl border border-[#1f233d] bg-[#101325] px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30" />
+                </div>
+              </div>
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label class="mb-2 block text-sm font-medium text-[#d1d4e2]" for="gender">Gender</label>
+                  <select id="gender" name="gender" class="w-full rounded-2xl border border-[#1f233d] bg-[#101325] px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30">
+                    <option value="">Prefer not to say</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="mb-2 block text-sm font-medium text-[#d1d4e2]" for="phone">Phone number</label>
+                  <input id="phone" name="phone" type="tel" inputmode="numeric" pattern="\d{10}" placeholder="0123456789" class="w-full rounded-2xl border border-[#1f233d] bg-[#101325] px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30" />
+                </div>
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-[#d1d4e2]" for="address">Address</label>
+                <input id="address" name="address" type="text" placeholder="123 Main Street" class="w-full rounded-2xl border border-[#1f233d] bg-[#101325] px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30" />
+              </div>
+              <div class="flex items-start gap-3">
+                <input id="terms" name="terms" type="checkbox" required class="mt-1 h-4 w-4 rounded border-[#2c304d] bg-[#101325] text-primary focus:ring-primary" />
+                <label for="terms" class="text-sm text-[#b0b6d4]">I agree to the terms and conditions.</label>
+              </div>
+              <button type="submit" class="w-full rounded-2xl bg-primary px-5 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white shadow-[0_15px_30px_rgba(223,107,51,0.24)] transition hover:bg-[#e3754d]">Create account</button>
+              <p class="text-center text-sm text-[#b0b6d4]">Already have an account? <a href="login.html" class="font-medium text-primary hover:text-[#ff8f5e]">Back to login</a></p>
+            </form>
+            <div id="formMessage" class="mt-3 text-sm text-[#ff8f5e] hidden"></div>
+          </div>
+          <div class="hidden md:flex items-center justify-center bg-[radial-gradient(circle_at_top_right,_rgba(223,107,51,0.22),_transparent_42%),_linear-gradient(180deg,_rgba(255,255,255,0.04),_rgba(255,255,255,0))] px-8 py-10">
+            <div class="max-w-md text-center">
+              <div class="mb-6 inline-flex rounded-full bg-[#11131f] px-4 py-2 text-xs uppercase tracking-[0.32em] text-[#ffb89c]">Secure setup</div>
+              <h2 class="text-3xl font-heading font-extrabold text-white">Register with confidence</h2>
+              <p class="mt-4 text-sm leading-6 text-[#c5c9dd]">Complete your profile securely with a responsive registration flow designed for desktop, tablet, and mobile.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/lucide/dist/lucide.min.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) lucide.createIcons();
+
+        const form = document.getElementById('registerForm');
+        const message = document.getElementById('formMessage');
+
+        form.addEventListener('submit', (event) => {
+          const password = form.password.value.trim();
+          const confirmPassword = form.confirmPassword.value.trim();
+          const phone = form.phone.value.trim();
+
+          let error = '';
+
+          if (password !== confirmPassword) {
+            error = 'Passwords must match.';
+          } else if (phone && !/^\d{10}$/.test(phone)) {
+            error = 'Phone number must be 10 digits.';
+          }
+
+          if (error) {
+            event.preventDefault();
+            message.textContent = error;
+            message.classList.remove('hidden');
+          } else {
+            message.classList.add('hidden');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
